@@ -101,7 +101,7 @@ class Squirrel(models.Model):
         default=False,
         )
 
-    Other_Activitiesg = models.CharField(
+    Other_Activities = models.CharField(
         max_length=100,
         )
 
