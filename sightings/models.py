@@ -4,15 +4,18 @@ from django.utils.translation import gettext as _
 
 class Squirrel(models.Model):
     Latitude = models.FloatField(
-        max_length=17
+        max_length=17,
+        blank=False,
         )
 
     Longitude = models.FloatField(
-        max_length=17
+        max_length=17,
+        blank=False,
         )
 
     Unique_Squirrel_ID = models.CharField(
-        max_length=100
+        max_length=100,
+        blank=False,
         )
 
     AM = 'AM'
@@ -26,10 +29,12 @@ class Squirrel(models.Model):
     Shift = models.CharField(
         max_length=2,
         choices=SHIFT_CHOICES,
+        blank=False,
         )
 
     Date = models.DateField(
         help_text=_('Date in the form of MMDDYYYY'),
+        blank=False,
     )
 
     ADULT = 'Adult'
@@ -103,6 +108,7 @@ class Squirrel(models.Model):
 
     Other_Activities = models.CharField(
         max_length=100,
+        blank=True,
         )
 
     Kuks = models.BooleanField(

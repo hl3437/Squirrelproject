@@ -10,14 +10,20 @@ def stats(request):
     return render(request, 'sightings/stats.html', {})
 
 def add_squirrel(request):
-    if request.method == 'POST':
-        form = SqurrielForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return JsonResponse({})
-        else:
-            return JsonResponse({'errors': form.errors}, status=400)
+    context = {}
+    form = SquirrelForm(request.POST)
+    if form.is_valid():
+        form.save()
+    context['form']=form
+    return render(request, 'sightings/add.html', context)
+    #if request.method == 'POST':
+    # form = SquirrelForm(request.POST)
+    #   if form.is_valid():
+     #       form.save()
+    # else:
+     #    form = SquirrelForm()
+      #   context['form'] = form
+    # return render(request, 'sightings/add.html', context) 
    
-    return JsonResponse({})
 
 # Create your views here.
