@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from .forms import SquirrelForm
 from .models import Squirrel
-from django.shortcuts import get_object_or_404s
+from django.shortcuts import get_object_or_404
 
 def index(request):
     return render(request, 'sightings/index.html', {})
