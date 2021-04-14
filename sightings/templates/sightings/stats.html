@@ -1,252 +1,130 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thor`1nton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.82.0">
-    <title>Carousel Template · Bootstrap v5.0</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
-
-
-
-    <!-- Bootstrap core CSS -->
-<link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-
-    <!-- Custom styles for this template -->
-    <link href="{% static 'carousel.css' %}" rel="stylesheet">
-  </head>
-  <body>
-
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/home">Squirrel</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/map">Map</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/list">Sightings</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/stats">Statistics</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/add">Add</a>
-          </li>
-        </ul>
-
-      </div>
-    </div>
-  </nav>
-</header>
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-          crossorigin=""/>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="Mark Otto, Jacob Thor`1nton, and Bootstrap contributors">
+      <meta name="generator" content="Hugo 0.82.0">
+      <title>Carousel Template · Bootstrap v5.0</title>
+      <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+      <!-- Bootstrap core CSS -->
+      <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+      <style>
+         .bd-placeholder-img {
+         font-size: 1.125rem;
+         text-anchor: middle;
+         -webkit-user-select: none;
+         -moz-user-select: none;
+         user-select: none;
+         }
+         @media (min-width: 768px) {
+         .bd-placeholder-img-lg {
+         font-size: 3.5rem;
+         }
+         }
+      </style>
+      <!-- Custom styles for this template -->
+      <link href="{% static 'carousel.css' %}" rel="stylesheet">
+   </head>
+   <body>
+      <header>
+         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+               <a class="navbar-brand" href="/home">Squirrel</a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarCollapse">
+                  <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/map">Map</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/list">Sightings</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/stats">Statistics</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/add">Add</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <head>
+         <!-- Required meta tags -->
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+         <!-- Bootstrap CSS -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+         <link rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+            integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+            crossorigin=""/>
+         <!-- Make sure you put this AFTER Leaflet's CSS -->
+         <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
             integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
             crossorigin=""></script>
-
-    <style>
-      html,body {
-        height: 100%;
-      }
-    </style>
-  </head>
-<html>
-<p> <br> </p>
-<p><p style="text-align:center;"><span style="background: linear-gradient(to right, #ffa7a3, #5673bd); padding: 0.2em 1em; font-size: 36px; border-radius: 3px; color: #ffffff;"> <b> Squirrel statistics </b> </p></p></span></p>
-
-<br>
-		<br>
-                <div>
-                        <table class='table' id="shift_table" style="width: 700px">
-				<div class="alert alert-danger text-center" style="width: 700px" role="alert">
-					<h5><strong> Counts of squirrel sightings in each shift </strong></h5>
-                                </div>
-                                <thead class="thead-dark">
-                                         <tr>
-                                                 <th scope='col'></th>
-                                                 <th scope='col'>AM</th>
-                                                 <th scope='col'>PM</th>
-                                         </tr>
-                                 </thead>
-                                 <tbody>
-                                         <tr>
-                                                 <th>Shift</th>
-                                                 <td>{{context.Shift.AM}}</td>
-                                                 <td>{{context.Shift.PM}}</td>
-                                         </tr>
-                                         <tr>
-                                                 <th>percentage %</th>
-                                                 <td>{{context.Shift_pct.AM}}</td>
-                                                 <td>{{context.Shift_pct.PM}}</td>
-                                         </tr>
-                                 </tbody>
-                         </table>
-                </div>
-		<br>
-		<br>
-                <div>
-                         <table class="table" id="age_table" style="width: 700px">
-				 <div class="alert alert-success text-center" style="width: 700px" role="alert">
-                                        <h5><strong> Counts of juvenile and adult squirrels </strong></h5>
-                                </div>
-				 <thead class="thead-dark">
-                                         <tr>
-                                                 <th scope='col'></th>
-                                                 <th scope='col'>Juvenile</th>
-                                                 <th scope='col'>Adult</th>
-                                         </tr>
-                                         </thead>
-                                 <tbody>
-                                         <tr>
-                                                 <th>Age</th>
-                                                 <td>{{context.Age.Juvenile}}</td>
-                                                 <td>{{context.Age.Adult}}</td>
-                                         </tr>
-                                         <tr>
-                                                 <th>percentage %</th>
-                                                 <td>{{context.Age_pct.Juvenile}}</td>
-                                                 <td>{{context.Age_pct.Adult}}</td>
-                                         </tr>
-                                 </tbody>
-                         </table>
-                </div>
-		<br>
-		<br>
-                <div>
-			<table class='table' id="color_table"  style="width: 700px">
-				<div class="alert alert-info text-center" style="width: 700px" role="alert">
-                                        <h5><strong> Counts of squirrels in different colors </strong></h5>
-                                </div>
-                                <thead class="thead-dark">
-                                         <tr>
-                                                 <th scope='col'></th>
-                                                 <th scope='col'>Black</th>
-                                                 <th scope='col'>Gray</th>
-                                                 <th scope='col'>Cinnamon</th>
-                                         </tr>
-                                 </thead>
-                                 <tbody>
-                                         <tr>
-                                                 <th>Primary fur color</th>
-                                                 <td>{{context.Primary_Fur_Color.Black}}</td>
-                                                 <td>{{context.Primary_Fur_Color.Gray}}</td>
-                                                 <td>{{context.Primary_Fur_Color.Cinnamon}}</td>
-                                         </tr>
-                                         <tr>
-                                                 <th>percentage %</th>
-                                                 <td>{{context.Primary_Fur_Color_pct.Black}}</td>
-                                                 <td>{{context.Primary_Fur_Color_pct.Gray}}</td>
-                                                 <td>{{context.Primary_Fur_Color_pct.Cinnamon}}</td>
-                                         </tr>
-                                 </tbody>
-                         </table>
-                </div>
-		<br>
-		<br>
-                <div>
-                         <table class='table' id="location_table" style="width: 700px">
-				 <div class="alert alert-warning text-center" style="width: 700px" role="alert">
-                                        <h5><strong> Counts of squirrels in different locations </strong></h5>
-                                </div>
-				 <thead class="thead-dark">
-                                         <tr>
-                                                 <th scope='col'></th>
-                                                 <th scope='col'>Above_Ground</th>
-                                                 <th scope='col'>Ground_Plane</th>
-                                         </tr>
-                                 </thead>
-                                 <tbody>
-                                         <tr>
-                                                 <th>Location</th>
-                                                 <td>{{context.Location.Above_Ground}}</td>
-                                                 <td>{{context.Location.Ground_Plane}}</td>
-                                         </tr>
-                                         <tr>
-                                                 <th>percentage %</th>
-                                                 <td>{{context.Location_pct.Above_Ground}}</td>
-                                                 <td>{{context.Location_pct.Ground_Plane}}</td>
-                                         </tr>
-                                 </tbody>
-                         </table>
-                </div>
-		<br>
-		<br>
-                <div>
-			<table class='table' id="runfrom_table" style="width: 700px">
-				<div class="alert alert-primary text-center" style="width: 700px" role="alert">
-					<h5><strong> Counts of squirrels that run from people </strong></h5>
-				</div>
-				<thead class="thead-dark">
-					 <tr>
-						 <th scope='col'></th>
-						 <th scope='col'>True</th>
-						 <th scope='col'>False</th>
-					 </tr>
-				 </thead>
-				 <tbody>
-					 <tr>
-						 <th>Run from people</th>
-						 <td>{{context.Runs_From.True}}</td>
-						 <td>{{context.Runs_From.False}}</td>
-					 </tr>
-					 <tr>
-						 <th>percentage %</th>
-						 <td>{{context.Runs_From_pct.True}}</td>
-						 <td>{{context.Runs_From_pct.False}}</td>
-					 </tr>
-				 </tbody>
-			 </table>
-                </div>
-		<br>
-		<br>
-        </body>
-  <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-end"><a href="#">Back to top</a></p>
-    <p> <a> Tools for Analytics project </a></p>
-  </footer>
-
-</html>
-
+         <style>
+            html,body {
+            height: 100%;
+            }
+         </style>
+      </head>
+      <html>
+         <p> <br> </p>
+         <p>
+         <p style="text-align:center;"><span style="background: linear-gradient(to right, #ffa7a3, #5673bd); padding: 0.2em 1em; font-size: 36px; border-radius: 3px; color: #ffffff;"> <b> Squirrel statistics </b> </p>
+         </p></span></p>
+         <br>
+         <br>
+         <p style="margin-left:70px;"><strong>Total number of squirrels tracked: 3018</strong></p>
+         <p style="margin-left:70px;"><strong>Age:</strong>
+         <ul style="margin-left:70px;">
+            <li>Adult: 2564</li>
+            <li>Juvenile: 329</li>
+            <li>Unknown: 125</li>
+         </ul>
+         </p>
+         <p style="margin-left:70px;"><strong>Location:</strong>
+         <ul style="margin-left:70px;">
+            <li>Ground Plane: 2111</li>
+            <li>Above Ground: 843</li>
+            <li>Unkown: 64</li>
+         </ul>
+         </p>
+         <p style="margin-left:70px;"><strong>Primary Fur Color:</strong>
+         <ul style="margin-left:70px;">
+            <li>Gray: 2468</li>
+            <li>Cinnamon: 392</li>
+            <li>Black: 103</li>
+            <li>Unknown: 55</li>
+         </ul>
+         </p>
+         <p style="margin-left:70px;"><strong>Shift:</strong>
+         <ul style="margin-left:70px;">
+            <li>PM: 1673</li>
+            <li>AM: 1345</li>
+         </ul>
+         </p>
+         <p style="margin-left:70px;"><strong>Activity - Running:</strong>
+         <ul style="margin-left:70px;">
+            <li>False: 2291</li>
+            <li>True: 727</li>
+         </ul>
+         </p>
+         <br>
+         </body>
+         <!-- FOOTER -->
+         <footer class="container">
+            <p class="float-end"><a href="#">Back to top</a></p>
+            <p> <a> Tools for Analytics project </a></p>
+         </footer>
+      </html>
