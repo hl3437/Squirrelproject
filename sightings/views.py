@@ -12,13 +12,16 @@ def stats(request):
     return render(request, 'sightings/stats.html', {})
 
 def add_squirrel(request):
-    context = {}
-    form = SquirrelForm(request.POST)
-    if form.is_valid():
+  if request.method == "POST":
+     form = SquirrelForm.MMEditidStateForm(request.POST)
+     if form.is_valid():
         form.save()
-    context['form']=form
-    return render(request, 'sightings/add.html', context)
-   
+  form = SquirrelForm
+  context = {
+      'form': form,
+  }
+  return render(request, 'sightings/add.html', context)
+
 def update_squirrel(request, Unique_Squirrel_ID):
     squirrel = get_object_or_404(Squirrel, pk=Unique_Squirrel_ID)
     if request.method == 'POST':

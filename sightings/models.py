@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext as _
+
 # Create your models here.
 
 class Squirrel(models.Model):
@@ -33,7 +34,7 @@ class Squirrel(models.Model):
         )
 
     Date = models.DateField(
-        help_text=_('Date in the form of MMDDYYYY'),
+        help_text=_('(Date in the form of MMDDYYYY)'),
         blank=False,
     )
 
@@ -142,3 +143,4 @@ class Squirrel(models.Model):
     Runs_from = models.BooleanField(
         default=False,
         )
+
