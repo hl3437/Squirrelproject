@@ -15,7 +15,7 @@ Our website provides the following views:
 Project Group 50, Section 1
 
 ### Webpage
-Visit: http://group50.pythonanywhere.com/
+Visit: http://hl3437.pythonanywhere.com/
 
 ### UNIs
 UNIs:[hl3437, xr2148]
