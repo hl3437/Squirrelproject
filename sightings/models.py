@@ -105,7 +105,7 @@ class Sight(models.Model):
         default=False,
         )
 
-    Chasingg = models.BooleanField(
+    Chasing = models.BooleanField(
         default=False,
         )
 
