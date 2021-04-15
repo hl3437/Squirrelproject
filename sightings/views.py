@@ -1,7 +1,7 @@
 # Create your views here.
 from django.shortcuts import redirect
 from django.shortcuts import render
-
+from django.shortcuts import get_object_or_404
 from .forms import SightForm
 from .models import Sight
 
@@ -30,12 +30,12 @@ def list_sights(request):
 
 
 def update_sights(request, Unique_Squirrel_Id):
-    sight = get_object_or_404(Sight, pk=Unique_Squirrel_ID)
+    sight = get_object_or_404(Sight, Unique_Squirrel_Id=Unique_Squirrel_Id)
     if request.method == 'POST':
         form = SightForm(request.POST, instance=sight)
         if form.is_valid():
             form.save()
-            return redirect(f'/sightings/{Unique_Squirrel_ID}')
+            return redirect(f'/sightings/{Unique_Squirrel_Id}')
     else:
         form = SightForm(instance=sight)
 
