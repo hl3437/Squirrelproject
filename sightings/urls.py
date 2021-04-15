@@ -9,7 +9,7 @@ urlpatterns = [
     path('list/', views.list_sights),
     path('stats/', views.stats_view),
     path('add/', views.add_sights),
-    path('sightings/<Unique_Squirrel_Id>/', views.update_sights),
+    path('list/<Unique_Squirrel_Id>/', views.update_sights),
     path('index/', views.index),
 
 ]
