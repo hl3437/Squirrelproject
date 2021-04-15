@@ -62,7 +62,7 @@ def add_sights(request):
 
 
 def stats_view(request):
-    return render(request, 'sightings/stats.html', {'context': context})
+    return render(request, 'sightings/stats.html')
 
 
 def index(request):
