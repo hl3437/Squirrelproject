@@ -29,7 +29,11 @@ def list_sights(request):
     return render(request, 'sightings/list.html', context)
 
 
+
 def update_sights(request, Unique_Squirrel_Id):
+    for row in Sight.objects.all().reverse():
+        if Sight.objects.filter(Unique_Squirrel_Id=row.Unique_Squirrel_Id).count() > 1:
+            row.delete()
     sight = get_object_or_404(Sight, Unique_Squirrel_Id=Unique_Squirrel_Id)
     if request.method == 'POST':
         form = SightForm(request.POST, instance=sight)
@@ -43,7 +47,6 @@ def update_sights(request, Unique_Squirrel_Id):
         'form': form,
     }
     return render(request, 'sightings/update.html', context)
-
 
 def add_sights(request):
     if request.method == 'POST':
